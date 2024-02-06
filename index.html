@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            width: 70%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #45a049;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            cursor: pointer;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .question::after {
+            content: "▼";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+
+        .question.open::after {
+            content: "▲";
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .answer {
+            display: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color:white;
+        }
+
+        .question:hover {
+            background-color: #e0e0e0;
+        }
+
+        .answer p {
+            margin: 0;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><u>Frequently Asked Questions</u></h1>
+    <center><h2><u>Java programming</u></h2></center>
+
+
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search FAQ...">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">1. What is Java programming with HTML and CSS?</div>
+        <div class="answer">
+            <p>Java programming with HTML and CSS involves using the Java programming language to create dynamic web applications, where HTML is used for structuring the content of web pages and CSS is used for styling and formatting those pages.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">2. Why would I use Java for web development instead of other languages like JavaScript or Python?</div>
+        <div class="answer">
+            <p>Java is a popular choice for web development due to its robustness, scalability, and security features. Additionally, Java can be used for both front-end (with frameworks like JavaServer Faces) and back-end (with frameworks like Spring) development, providing a comprehensive solution for web applications.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">3. How do I integrate Java with HTML and CSS?</div>
+        <div class="answer">
+            <p>Java can be integrated with HTML and CSS through frameworks like JavaServer Pages (JSP), where Java code is embedded directly into HTML pages to create dynamic content. CSS can be applied to HTML elements in the same way as in traditional web development.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">4. What are the advantages of using Java for web development?</div>
+        <div class="answer">
+            <p> 1.Platform independence: Java applications can run on any platform that supports the Java Virtual Machine (JVM).<br>
+               2.Strong typing: Java's strong typing system helps catch errors at compile time, reducing runtime errors.<br>
+                3.Security: Java has built-in security features like sandboxing to protect against malicious code.<br>
+                4.Scalability: Java's modular architecture and support for enterprise-level frameworks make it suitable for building scalable web applications.</p>
+        </div>
+    </div>
+   
+    <div class="faq-item">
+        <div class="question">5. Can I use Java to create responsive web designs with HTML and CSS?</div>
+        <div class="answer">
+            <p>Yes, Java can be used alongside HTML and CSS to create responsive web designs. Java frameworks like Spring MVC allow developers to build responsive web applications by integrating with front-end frameworks like Bootstrap or Foundation.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">6. Are there any limitations to using Java for web development?</div>
+        <div class="answer">
+            <p>While Java offers many advantages, it may have a steeper learning curve compared to other languages like JavaScript or Python, especially for beginners. Additionally, Java web applications may require more memory and processing power compared to lighter-weight alternatives.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">7. Which IDEs (Integrated Development Environments) are commonly used for Java web development?</div>
+        <div class="answer">
+            <p>Popular IDEs for Java web development include Eclipse, IntelliJ IDEA, and NetBeans. These IDEs provide features like code completion, debugging, and project management to streamline the development process.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">8. Can I use Java to create interactive web applications with HTML and CSS?</div>
+        <div class="answer">
+            <p>Yes, Java can be used to create interactive web applications by combining HTML and CSS with JavaScript libraries or frameworks like React or Angular. Java can handle the backend logic while JavaScript handles the client-side interactions, providing a seamless user experience.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">9. How can I learn Java programming for web development with HTML and CSS?</div>
+        <div class="answer">
+            <p>There are many resources available online, including tutorials, books, and online courses, to help you learn Java programming for web development. Additionally, practicing coding exercises and building projects can help reinforce your skills and understanding.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">10. What are some examples of popular websites or web applications built using Java, HTML, and CSS?</div>
+        <div class="answer">
+            <p>Some examples of popular websites or web applications built using Java, HTML, and CSS include LinkedIn, Netflix, and Amazon. These websites demonstrate the scalability and flexibility of Java for building robust web applications.</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // JavaScript to toggle answer visibility
+    const questions = document.querySelectorAll('.question');
+    questions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            question.classList.toggle('open');
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+
+<script>
+    function search() {
+        var input, filter, faqItems, question, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        faqItems = document.getElementsByClassName("faq-item");
+        for (i = 0; i < faqItems.length; i++) {
+            question = faqItems[i].getElementsByClassName("question")[0];
+            txtValue = question.textContent || question.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                faqItems[i].style.display = "";
+                highlightMatches(question, filter);
+            } else {
+                faqItems[i].style.display = "none";
+            }
+        }
+    }
+
+    function highlightMatches(question, filter) {
+        var innerHTML = question.innerHTML;
+        var index = innerHTML.toUpperCase().indexOf(filter);
+        if (index >= 0) {
+            innerHTML = innerHTML.substring(0, index) + "<span class='highlight'>" + innerHTML.substring(index, index + filter.length) + "</span>" + innerHTML.substring(index + filter.length);
+            question.innerHTML = innerHTML;
+        }
+    }
+</script>
+
+</body>
+</html>
